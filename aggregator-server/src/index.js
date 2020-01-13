@@ -28,4 +28,4 @@ app.get('/', async (req, res) => {
   return res.send(html)
 })
 
-app.listen(8080, () => console.log('Aggregator Running'))
+app.listen(8080, () => console.log('Aggregator Running on http://localhost:8080'))
