@@ -1,6 +1,7 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const NodemonPlugin = require('nodemon-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const server = {
   target: 'node',
@@ -42,6 +43,10 @@ const client = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
@@ -54,7 +59,8 @@ const client = {
     ]
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin()
   ]
 }
 

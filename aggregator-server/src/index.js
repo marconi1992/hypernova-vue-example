@@ -17,6 +17,7 @@ app.get('/', async (req, res) => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Document</title>
       <link rel="stylesheet" href="/style.css">
+      <link rel="stylesheet" href="http://localhost:3030/main.css">
     </head>
     <body>
       ${content.html}

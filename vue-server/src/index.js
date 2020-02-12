@@ -5,6 +5,10 @@ import path from 'path'
 
 import ProductList from './components/ProductList.vue'
 
+import VueMaterial from 'vue-material'
+
+Vue.use(VueMaterial)
+
 hypernova({
   devMode: true,
   getComponent (name, context) {

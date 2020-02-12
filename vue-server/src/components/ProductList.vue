@@ -2,12 +2,18 @@
   <div class="k-product-list">
     <h2 class="k-product-list__header">{{title}}</h2>
     <ul>
-      <li v-for="(item, idx) in items" :key="idx" class="k-product-item">
-        <img :src="item.imageUrl" class="k-product-item__image">
-        <h4 class="k-product-item__title">{{ item.title }}</h4>
+      <li v-for="(item, idx) in items" :key="idx">
+        <md-card class="k-product-item">
+          <md-card-media>
+            <img :src="item.imageUrl" :alt="item.title">
+          </md-card-media>
+          <md-card-header>
+            <div class="md-title">{{ item.title }}</div>
+          </md-card-header>
+        </md-card>
       </li>
     </ul>
-    <button @click="addItem">Add Item</button>
+    <md-button class="md-raised md-primary" @click="addItem">Add Item</md-button>
   </div>
 </template>
 <script>
